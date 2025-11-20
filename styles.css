@@ -1,0 +1,284 @@
+/* General Styling & Warna Utama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+:root {
+    --color-primary: #0d3b66; 
+    --color-accent: #ffc300; 
+    --color-text-dark: #333;
+    --color-light-grey: #f0f0f0; 
+}
+
+/* --- 1. Header/Navbar Styling --- */
+.navbar { 
+    background-color: var(--color-primary); 
+    padding: 15px 0; 
+    color: white; 
+    
+    /* STICKY NAVBAR */
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+}
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: 700; }
+.nav-menu { display: flex; gap: 30px; }
+.nav-item { color: white; text-decoration: none; font-weight: 400; padding: 5px 10px; transition: background-color 0.3s; }
+.nav-item:hover { background-color: rgba(255, 255, 255, 0.1); }
+
+.nav-item.active { 
+    background-color: var(--color-accent); 
+    color: var(--color-primary); 
+    font-weight: 600; 
+    border-radius: 4px; 
+}
+.nav-item.active-page { 
+    background-color: var(--color-accent); 
+    color: var(--color-primary); 
+    font-weight: 600; 
+    border-radius: 4px; 
+}
+
+.menu-toggle, .hamburger { display: none; }
+
+/* --- 2. Hero Header dan Judul Konten --- */
+.page-hero-header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    border-bottom: 1px solid transparent; 
+    padding-bottom: 70px;
+    
+    /* KOMPENSASI FIXED NAVBAR */
+    margin-top: 60px;
+}
+.page-hero-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+.page-hero-header p { font-size: 18px; opacity: 0.9; }
+
+.content-section {
+    padding: 80px 0; 
+    position: relative; 
+    z-index: 1; 
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--color-primary); 
+    border-left: 5px solid var(--color-accent); 
+    padding-left: 15px;
+    margin-bottom: 40px; 
+}
+
+/* --- STYLING KHUSUS HALAMAN DETAIL KATEGORI --- */
+
+.product-detail-hero {
+    padding-bottom: 50px;
+}
+.product-detail-hero h1 {
+    margin-bottom: 5px;
+}
+.product-detail-hero .category-label {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-accent); 
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Tombol Kembali */
+.back-button-section {
+    padding: 20px 0;
+    background-color: #f7f7f7; 
+    text-align: right; 
+    margin-bottom: 10px; 
+}
+
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: white; 
+    color: var(--color-primary); 
+    padding: 8px 16px; 
+    border: 1px solid var(--color-primary); 
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: var(--color-primary); 
+    color: white; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+/* Grid untuk Daftar Produk (4 kolom di Desktop) */
+.product-list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.product-card-detail {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s;
+}
+
+.product-card-detail:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    width: 100%;
+    height: 180px; /* Tinggi gambar seragam untuk desktop */
+    object-fit: contain; 
+    display: block;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* --- Footer Styling --- */
+footer { 
+    background-color: var(--color-primary); 
+    color: white; 
+    padding: 20px 0; 
+    text-align: center; 
+}
+footer p { font-size: 14px; }
+
+
+/* ======================================= */
+/* --- 5. Media Queries untuk MOBILE --- */
+/* ======================================= */
+@media (max-width: 768px) {
+    
+    /* TAMPILAN HAMBURGER */
+    .navbar .container { flex-direction: row; justify-content: space-between; }
+    .hamburger { display: flex; flex-direction: column; justify-content: space-around; width: 30px; height: 25px; cursor: pointer; z-index: 20; } 
+    .bar { height: 3px; width: 100%; background-color: white; border-radius: 1px; transition: all 0.3s ease; }
+    
+    /* Menu Navigasi Mobile (Disembunyikan) */
+    .nav-menu { 
+        position: absolute; 
+        top: 60px; 
+        left: 0; 
+        width: 100%; 
+        background-color: var(--color-primary); 
+        flex-direction: column; 
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.3s ease-in-out; 
+        z-index: 10; 
+    }
+    
+    .nav-item { 
+        padding: 10px 20px; 
+        width: 100%; 
+        text-align: center; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+    
+    .nav-item.active, .nav-item.active-page { width: 100%; border-radius: 0; margin: 0; }
+    
+    /* Logic Tampilkan Menu saat Hamburger diklik */
+    #menu-toggle:checked ~ .nav-menu { 
+        max-height: 380px; 
+    }
+    
+    /* PENYESUAIAN PADDING DAN FONT */
+    .page-hero-header { 
+        margin-top: 60px;
+        padding-top: 30px; 
+        padding-bottom: 50px; 
+    }
+    .page-hero-header h1 { font-size: 28px; }
+    .page-hero-header p { font-size: 16px; }
+
+    .content-section { padding: 40px 0; }
+    .section-title { font-size: 24px; margin-bottom: 30px; }
+
+    /* >>> MODIFIKASI: PAKSA GRID 4 KOLOM DI MOBILE <<< */
+    .product-list-grid {
+        /* Memaksa 4 kolom di mobile */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 10px; /* Kurangi gap */
+    }
+    .product-img {
+        /* Ketinggian disesuaikan agar 4 kolom muat */
+        height: 80px; 
+        object-fit: contain; 
+    }
+    .product-card-detail {
+        padding: 0;
+        border: 1px solid #eee;
+    }
+    .product-info {
+        padding: 5px; /* Padding minimal */
+    }
+    .product-info h3 {
+        font-size: 10px; /* Ukuran font diperkecil agar muat */
+        font-weight: 600;
+    }
+    /* Akhir Modifikasi Grid 4 Kolom */
+
+
+    /* Tombol Kembali Mobile */
+    .back-button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Pada layar yang sangat kecil, tetap paksakan 4 kolom */
+    .product-list-grid {
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 5px;
+    }
+    .product-img {
+        height: 60px; /* Semakin kecil */
+    }
+    .product-info h3 {
+        font-size: 9px; /* Sangat kecil */
+    }
+}
